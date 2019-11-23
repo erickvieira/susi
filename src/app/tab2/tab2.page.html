@@ -1,9 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Two
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content></ion-content>
+<ion-content>
+  <ion-card *ngFor="let reaction of reactions" >
+    <ion-card-header>
+      <ion-card-subtitle>Lorem ipsum</ion-card-subtitle>
+      <ion-card-title>Lorem ipsum</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum unde cupiditate fugiat nisi voluptatem eos aperiam sequi, delectus mollitia magnam optio modi, voluptates, odio sapiente tempore blanditiis! In, at necessitatibus?
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button color="danger" shape="round" shape="clear">
+            <ion-icon name="thumbs-down"></ion-icon>
+            {{ reaction.down }}
+          </ion-button>
+          <ion-button color="success" shape="round" shape="clear">
+            <ion-icon name="thumbs-up"></ion-icon>
+            {{ reaction.up }}
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

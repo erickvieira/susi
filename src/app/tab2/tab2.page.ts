@@ -7,6 +7,17 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
+  reactions = [
+    {up: 0, down: 12},
+    {up: 0, down: 43},
+    {up: 2, down: 32},
+    {up: 0, down: 21},
+    {up: 2, down: 12},
+    {up: 125, down: 13},
+    {up: 0, down: 18},
+    {up: 7, down: 10}
+  ]
+
   constructor() {}
 
 }
