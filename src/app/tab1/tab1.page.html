@@ -1,0 +1,35 @@
+<ion-content>
+
+  <div *ngIf="showInList; else showMap" style="padding-top: 32px">
+    <ion-text class="ion-padding" color="medium" style="font-size: 18px;">
+      Unidades de Pronto Atendimento
+    </ion-text>
+    <ion-list style="margin-top: 32px;">
+      <div *ngFor="let spot of spots">
+        <app-item [spot]="spot" (on-item-click)="details($event)"></app-item>
+      </div>
+    </ion-list>
+  </div>
+
+  <ng-template #showMap>
+    <live-map
+      [spots]="spots"
+      (on-pin-click)="details($event)">
+    </live-map>
+  </ng-template>
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" 
+    style="bottom: 15px; right: 15px;">
+    <ion-fab-button color="secondary" 
+      (click)="showInList = !showInList; showInList ? undefined : reload()">
+      <ion-icon [name]="showInList ? 'map' : 'list'" color="light"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
+
+<div class="backdrop" *ngIf="!spots || spots.length === 0">
+  <span class="center">
+    <ion-spinner name="bubbles" color="primary"></ion-spinner>
+  </span>
+</div>

@@ -1,0 +1,12 @@
+.dangerlight {
+    border-left: 5px solid var(--ion-color-danger);
+    --background: rgba(var(--ion-color-danger-rgb), 0.03) !important;
+}
+.successlight {
+    border-left: 5px solid var(--ion-color-success);
+    --background: rgba(var(--ion-color-success-rgb), 0.03) !important;
+}
+.warninglight {
+    border-left: 5px solid var(--ion-color-warning);
+    --background: rgba(var(--ion-color-warning-rgb), 0.03) !important;
+}

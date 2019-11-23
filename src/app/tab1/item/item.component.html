@@ -1,0 +1,16 @@
+<ion-item [ngClass]="classificacaoColor" 
+  lines="none"
+  (click)="onItemClick.emit(spot)">
+  <ion-label>
+    {{ spot.nome }}
+    <br>
+    <small>
+      {{ spot.emdereco }}
+    </small>
+  </ion-label>
+  <ion-note color="medium" class="ion-text-center">
+    {{ spot.distancia }}
+    <br>
+    <small>km</small>
+  </ion-note>
+</ion-item>

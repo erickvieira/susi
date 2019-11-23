@@ -1,0 +1,86 @@
+<ion-content>
+  <div class="header-elipse">
+    <div class="shape">
+      <ion-text color="light">
+        <b>{{ spot.nome }}</b>
+      </ion-text>
+      <br>
+      <ion-text color="light">
+        <small>{{ spot.emdereco }}</small>
+      </ion-text>
+    </div>
+  </div>
+  <ion-row>
+    <ion-col size="3" class="ion-text-center">
+      <div class="fast-info" style="font-size: 16px">
+        {{ spot.distancia }}
+        <br>
+        <ion-text color="medium">
+          <small>km</small>
+        </ion-text>
+      </div>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button fill="clear" expand="full" color="primary" [href]="'tel:' + spot.telefone">
+        <ion-icon name="call" slot="start"></ion-icon>
+        <small>{{ spot.telefone }}</small>
+      </ion-button>
+    </ion-col>
+    <ion-col size="3" class="ion-text-center">
+      <div class="fast-info">
+        <ion-text color="medium">
+          <small>das {{ spot.horarioAtend[0] }}</small>
+          <br>
+          <small>às {{ spot.horarioAtend[1] }}</small>
+        </ion-text>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-item lines="none">
+    <ion-icon name="information-circle" [color]="classificacaoColor" slot="start"></ion-icon>
+    <ion-label>
+      <ion-title mode="md" [color]="classificacaoColor">
+        {{ classificacaoLabel }}
+        <br>
+        <ion-text color="medium">
+          <small>
+            tempo de espera
+            <b>estimado</b>
+          </small>
+        </ion-text>
+      </ion-title>
+    </ion-label>
+  </ion-item>
+  <ion-list style="margin-top: 16px;">
+    <ion-item-group *ngIf="spot.vacinasIndisponiveis">
+      <ion-item-divider color="light">
+        Vacinas em falta nesta unidade
+      </ion-item-divider>
+      <div style="padding: 0 8px">
+        <ion-chip color="medium" *ngFor="let vacina of spot.vacinasIndisponiveis">
+          {{ vacina }}
+        </ion-chip>
+      </div>
+    </ion-item-group>
+    <ion-item-group *ngIf="spot.itensAcessibilidade">
+      <ion-item-divider>
+        Esta Unidade conta com
+      </ion-item-divider>
+      <div style="padding: 0 8px">
+        <ion-chip color="medium" *ngFor="let acessibilidade of spot.itensAcessibilidade">
+          {{ acessibilidade }}
+        </ion-chip>
+      </div>
+    </ion-item-group>
+  </ion-list>
+</ion-content>
+<ion-footer padding>
+  <ion-button size="small" color="primary" fill="clear" expand="block">
+    <ion-icon name="megaphone"></ion-icon>
+    relatar falta de vacinas
+  </ion-button>
+  <ion-button size="small" color="secondary" expand="block">
+    <ion-icon name="pin"></ion-icon>
+    como chegar?
+  </ion-button>
+</ion-footer>
