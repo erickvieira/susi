@@ -1,0 +1,41 @@
+.holder {
+    width: 100vw;
+    .holder-ballon {
+        width: 100%;
+        margin: 4px 0;
+        .ballon {
+            position: relative;
+            background-color: lightpink;
+            padding: 4px 8px;
+            border-radius: 8px;
+            width: 100%;
+            .criadoEm {
+                float: right;
+            }
+        }
+    }
+    &.eu {
+        margin-left: 70px;
+        .holder-ballon > .ballon {
+            background-color: #eee !important;
+            float: right;
+            border-bottom-right-radius: 0 !important;
+        }
+    }
+    &.susi {
+        margin-right: 70px;
+        .holder-ballon > .ballon {
+            float: left;
+            border-bottom-left-radius: 0 !important;
+            .criadoEm {
+                color: rgb(243, 77, 105) !important;
+            }
+        }
+        .result {
+            margin-top: 8px;
+            img {
+                border-radius: 4px;
+            }
+        }
+    }
+}

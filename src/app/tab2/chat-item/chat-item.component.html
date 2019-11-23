@@ -1,0 +1,19 @@
+<ion-item lines="none">
+  <div class="holder" [ngClass]="autor">
+    <div class="holder-ballon">
+      <span class="ballon">
+        <small>{{ mensagem }}</small>
+        <br>
+        <div class="result" *ngIf="result && autor === 'susi'" >
+          <img src="assets/imgs/map.png">
+          <div>{{ result.nome }}</div>
+          <span>{{ result.distancia }}km - <span class=""></span> {{ result.indicador }} </span>
+        </div>
+        <ion-text class="criadoEm" color="medium">
+          <small>{{ criadoEm }}</small>
+        </ion-text>
+        <br>
+      </span>
+    </div>
+  </div>
+</ion-item>

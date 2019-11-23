@@ -17,7 +17,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'noticias',
+        path: 'susi',
         children: [
           {
             path: '',
